@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 
+import Address from "./Address"
+import Company from "./Company"
 import UserItem from "./UserItem"
 
 // import UserItem from "./UserItem"
@@ -15,10 +17,10 @@ const User = (props) => {
             <UserItem item={"id"} value={props.data.id} />
             <UserItem item={"name"} value={props.data.name} />
             <UserItem item={"email"} value={props.data.username} />
-            <UserItem item={"address"} value={props.data.address.street + ", " + props.data.address.suite + ", " + props.data.address.city + ", " + props.data.address.zipcode} />
+            <Address value={props.data.address}/>
             <UserItem item={"phone"} value={props.data.phone} />
             <UserItem item={"website"} value={props.data.website} />
-            <UserItem item={"company"} value={props.data.company.name + ", " + props.data.company.catchPhrase + ", " + props.data.company.bs} />
+            <Company value={props.data.company} />
         </>
     )
 }

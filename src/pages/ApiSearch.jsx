@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Searcher from "../components/Searcher";
-import User from "../components/User";
+import Searcher from "../components/apisearch/Searcher";
+import User from "../components/apisearch/User";
 const ApiSearch = () => {
 
   const [user, setUser] = useState({

@@ -1,5 +1,5 @@
-import Contacto from "../components/Contacto"
-import Divisor from "../components/Divisor"
+import Contacto from "../components/presentationcard/Contacto"
+import Divisor from "../components/presentationcard/Divisor"
 import "./fondo.css";
 
 const PresentationCard = () => {
