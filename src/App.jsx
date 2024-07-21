@@ -11,7 +11,7 @@ const App = () => {
     <div className="container">
 
     <Routes>
-      <Route path="/" element={<PresentationCard/>}/>
+      <Route path="/React-projects/" element={<PresentationCard/>}/>
       <Route path="/apisearch" element={<ApiSearch/>}/>
     </Routes>
     </div>
