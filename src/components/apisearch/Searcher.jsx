@@ -1,7 +1,13 @@
 import { useState } from "react"
+import { useContext } from "react";
+import UserContext from "../../contexts/UserContext";
+
 
 // eslint-disable-next-line react/prop-types
-const Searcher = ({getUser}) => {
+const Searcher = () => {
+
+    const { getUser } = useContext(UserContext)
+
 
     const [id, setId] = useState('')
 
@@ -12,7 +18,7 @@ const Searcher = ({getUser}) => {
     const handleSubmit = e => {
         e.preventDefault()
         if (id !== null) {
-            
+
             getUser(id)
         }
     }

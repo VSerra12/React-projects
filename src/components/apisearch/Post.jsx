@@ -1,6 +1,10 @@
 /* eslint-disable react/prop-types */
+// import { useContext } from "react";
+// import UserContext from "../../contexts/UserContext";
 
 const Post = ({data}) => {
+
+  
   return (
     <>
     <p>{data.body}</p>

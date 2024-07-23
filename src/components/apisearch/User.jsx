@@ -3,24 +3,26 @@
 import Address from "./Address"
 import Company from "./Company"
 import UserItem from "./UserItem"
+import { useContext } from "react";
+import UserContext from "../../contexts/UserContext";
 
-// import UserItem from "./UserItem"
+const User = () => {
+    const { user } = useContext(UserContext)
 
-const User = (props) => {
 
-    if(props.data.id === undefined || props.data.id === null){
+    if (user.id === undefined || user.id === null) {
         return <></>
     }
 
     return (
         <>
-            <UserItem item={"id"} value={props.data.id} />
-            <UserItem item={"name"} value={props.data.name} />
-            <UserItem item={"email"} value={props.data.username} />
-            <Address value={props.data.address}/>
-            <UserItem item={"phone"} value={props.data.phone} />
-            <UserItem item={"website"} value={props.data.website} />
-            <Company value={props.data.company} />
+            <UserItem item={"id"} value={user.id} />
+            <UserItem item={"name"} value={user.name} />
+            <UserItem item={"email"} value={user.username} />
+            <Address value={user.address} />
+            <UserItem item={"phone"} value={user.phone} />
+            <UserItem item={"website"} value={user.website} />
+            <Company value={user.company} />
         </>
     )
 }
