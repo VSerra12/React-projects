@@ -31,6 +31,8 @@ const UserProvider = ({ children }) => {
 
     const [list, setList] = useState(Array)
 
+    const [userName, setUserName] = useState("")
+
     useEffect(() => {
         getList()
     }, []) 
@@ -84,11 +86,34 @@ const UserProvider = ({ children }) => {
 
     }
 
+    const getUserName = async (id) => {
+        const url = 'https://jsonplaceholder.typicode.com/users/' + id;
+        try {
+
+            const respuesta = await fetch(url, {
+                method: "GET" // default, so we can ignore
+            })
+
+            if (!respuesta.ok) {
+                throw new Error('Ocurrió un error', respuesta.status)
+            }
+
+            const userData = await respuesta.json()
+
+            setUserName(userData.name)
+
+        } catch (error) {
+            console.log('[getProductos]:', error)
+        }
+    }
+
     const data = {
         user,
         list,
+        userName,
         getUser, 
-        getList
+        getList,
+        getUserName,
     }
 
   return <UserContext.Provider value={data}>{ children }</UserContext.Provider>

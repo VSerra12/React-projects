@@ -1,6 +1,9 @@
 /* eslint-disable react/prop-types */
 import Accordion from 'react-bootstrap/Accordion';
-import User from './User';
+import UserItem from './UserItem';
+import Address from './Address';
+import Company from './Company';
+
 
 const UserListItem = ({ user, eventKey }) => {
 
@@ -9,7 +12,13 @@ const UserListItem = ({ user, eventKey }) => {
             <Accordion.Item eventKey={eventKey}>
                 <Accordion.Header>{user.id}. {user.name}</Accordion.Header>
                 <Accordion.Body>
-                    <User data={user}/>
+                    <UserItem item={"id"} value={user.id} />
+                    <UserItem item={"name"} value={user.name} />
+                    <UserItem item={"email"} value={user.username} />
+                    <Address value={user.address} />
+                    <UserItem item={"phone"} value={user.phone} />
+                    <UserItem item={"website"} value={user.website} />
+                    <Company value={user.company} />
                 </Accordion.Body>
             </Accordion.Item>
         </>

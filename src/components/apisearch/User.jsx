@@ -3,16 +3,8 @@
 import Address from "./Address"
 import Company from "./Company"
 import UserItem from "./UserItem"
-import { useContext } from "react";
-import UserContext from "../../contexts/UserContext";
 
-const User = () => {
-    const { user } = useContext(UserContext)
-
-
-    if (user.id === undefined || user.id === null) {
-        return <></>
-    }
+const User = ({ user }) => {
 
     return (
         <>
